@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran Menüsü</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .menu { margin-top: 20px; }
+        .hidden { display: none; }
+        button { margin: 5px; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>C# Eğitim Kampı Restoran</h1>
+    <div class="menu" id="mainMenu">
+        <button onclick="showMenu('mainCourses')">Ana Yemekler</button>
+        <button onclick="showMenu('soups')">Çorbalar</button>
+        <button onclick="showMenu('pizzas')">Pizzalar</button>
+        <button onclick="showMenu('drinks')">İçecekler</button>
+        <button onclick="showMenu('desserts')">Tatlılar</button>
+    </div>
+    
+    <div class="menu hidden" id="mainCourses">
+        <h2>Ana Yemekler</h2>
+        <button onclick="selectItem('Kuru Fasulye')">Kuru Fasulye</button>
+        <button onclick="selectItem('İzmir Köfte')">İzmir Köfte</button>
+        <button onclick="selectItem('Tavuklu Pilav')">Tavuklu Pilav</button>
+        <button onclick="selectItem('Kuzu Tandır')">Kuzu Tandır</button>
+        <button onclick="selectItem('Kavurma')">Kavurma</button>
+    </div>
+    
+    <div class="menu hidden" id="soups">
+        <h2>Çorbalar</h2>
+        <button onclick="selectItem('Mercimek Çorbası')">Mercimek Çorbası</button>
+        <button onclick="selectItem('Tarhana Çorbası')">Tarhana Çorbası</button>
+        <button onclick="selectItem('Tavuk Suyu Çorbası')">Tavuk Suyu Çorbası</button>
+        <button onclick="selectItem('Domates Çorbası')">Domates Çorbası</button>
+        <button onclick="selectItem('Sebze Çorbası')">Sebze Çorbası</button>
+    </div>
+    
+    <div class="menu hidden" id="pizzas">
+        <h2>Pizzalar</h2>
+        <button onclick="selectItem('Sucuklu Pizza')">Sucuklu Pizza</button>
+        <button onclick="selectItem('Kavurmalı Pizza')">Kavurmalı Pizza</button>
+        <button onclick="selectItem('Mantarlı Pizza')">Mantarlı Pizza</button>
+        <button onclick="selectItem('Kıymalı Pizza')">Kıymalı Pizza</button>
+        <button onclick="selectItem('Sebzeli Pizza')">Sebzeli Pizza</button>
+    </div>
+    
+    <div class="menu hidden" id="drinks">
+        <h2>İçecekler</h2>
+        <button onclick="selectItem('Ayran')">Ayran</button>
+        <button onclick="selectItem('Kola')">Kola</button>
+        <button onclick="selectItem('Fanta')">Fanta</button>
+        <button onclick="selectItem('Limonata')">Limonata</button>
+        <button onclick="selectItem('Şalgam')">Şalgam</button>
+    </div>
+    
+    <div class="menu hidden" id="desserts">
+        <h2>Tatlılar</h2>
+        <button onclick="selectItem('Kadayıf')">Kadayıf</button>
+        <button onclick="selectItem('Baklava')">Baklava</button>
+        <button onclick="selectItem('Sütlaç')">Sütlaç</button>
+        <button onclick="selectItem('İrmik Helvası')">İrmik Helvası</button>
+        <button onclick="selectItem('Kemalpaşa')">Kemalpaşa</button>
+    </div>
+    
+    <h3 id="selection"></h3>
+    <button onclick="goBack()">Geri Dön</button>
+    
+    <script>
+        function showMenu(menuId) {
+            document.querySelectorAll('.menu').forEach(menu => menu.classList.add('hidden'));
+            document.getElementById(menuId).classList.remove('hidden');
+        }
+        
+        function selectItem(item) {
+            document.getElementById('selection').innerText = item + " seçildi!";
+        }
+        
+        function goBack() {
+            document.querySelectorAll('.menu').forEach(menu => menu.classList.add('hidden'));
+            document.getElementById('mainMenu').classList.remove('hidden');
+            document.getElementById('selection').innerText = "";
+        }
+    </script>
+</body>
+</html>
