@@ -24,7 +24,7 @@ Bu projede bireysel olarak bir kişisel web sitesi geliştirilecektir. Site, ken
 - GitHub ve Hosting (000webhost veya InfinityFree)
 
 ## Proje Durumu
-- [] Repository oluşturuldu
+- [ ] Repository oluşturuldu
 - [ ] Sayfa planlaması yapılıyor
 - [ ] HTML sayfaları hazırlanıyor
 - [ ] CSS ve responsive yapı eklenecek
